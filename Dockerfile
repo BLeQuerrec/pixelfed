@@ -5,6 +5,7 @@ RUN apk add --no-cache git imagemagick \
     && docker-php-ext-install pdo_mysql \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
+    && docker-php-ext-install pcntl \
     && apk del --purge .build
 
 RUN curl -sS https://getcomposer.org/installer | php \
